@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Music List</title>
+</head>
+<body>
+    <div class="bg">
+        <content>
+            <h1>Music List</h1>
+            <form action="/" method="get">
+                <input type="text" name="search" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+            
+            <ul>
+                <% for (let i = 0; i < musicData.length; i++) { %>
+                    <li>
+                        <h2><%= musicData[i].title %></h2>
+                        <audio controls>
+                            <source src="/uploads/<%= musicData[i].filename %>" type="audio/mp3">
+                        </audio>
+                        <p><%= musicData[i].description %></p>
+                    </li>
+                <% } %>
+            </ul>
+        </content>
+
+        <header>
+            <h1>NOPIAN</h1>
+        </header>
+    </div>
+</body>
+</html>
